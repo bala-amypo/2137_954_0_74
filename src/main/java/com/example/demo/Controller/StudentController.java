@@ -11,7 +11,7 @@ import com.example.demo.entity.Student;
 import com.example.demo.service.StudentService;
 
 @RestController
-@RequestMapping("/students") // ✅ base path
+@RequestMapping("/students") //  base path
 public class StudentController {
 
     private final StudentService studentService;
@@ -51,9 +51,9 @@ public class StudentController {
             student.setDob(st.getDob());
 
             studentService.insertStudent(student);
-            return "Updated Successfully ✅";
+            return "Updated Successfully ";
         }
-        return "Student Not Found ❌";
+        return "Student Not Found ";
     }
 
     // DELETE
@@ -63,8 +63,8 @@ public class StudentController {
 
         if (student.isPresent()) {
             studentService.deleteStudent(id);
-            return "Deleted Successfully ✅";
+            return "Deleted Successfully ";
         }
-        return "Student Not Found ❌";
+        return "Student Not Found ";
         }
 }
